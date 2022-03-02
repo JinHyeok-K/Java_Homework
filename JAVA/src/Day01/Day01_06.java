@@ -20,7 +20,7 @@ public class Day01_06 { //c.s
 		System.out.println("| 1 |"+A+"|"+B+" |"+date+"|");
 		System.out.println("-----------------------------");
 		
-		
+		scanner.close();
 		/* ex2) 순번 / 작성자 / 내용 / 날짜
 		System.out.println("----------- 방 문 록 ----------");
 		System.out.println("|순번|작성자|내용     |날짜|");

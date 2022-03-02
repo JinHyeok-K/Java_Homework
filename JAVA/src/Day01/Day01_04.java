@@ -36,7 +36,7 @@ public class Day01_04 { //c.s
 		System.out.println("-------------------------------");
 		*/
 		
-		
+		ÀÔ·Â°´Ã¼.close();
 	}//m.e
 	
 } //c.e

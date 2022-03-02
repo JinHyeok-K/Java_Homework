@@ -26,6 +26,7 @@ public class Day01_05 { //c.s
 		System.out.println("아이디\t비밀번호\t성명\t이메일");
 		System.out.println( ID +"\t" + PW+"\t"+ name +"\t"+email);
 		
+		scanner.close();
 		
 		
 		
