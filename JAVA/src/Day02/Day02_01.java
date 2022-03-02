@@ -42,7 +42,7 @@ public class Day02_01 { // 클래스 시작
 				/// = : 오른쪽 데이터가 왼쪽으로 대입 [저장]
 		// * 정수 10을 int 형 value 변수에 저장
 		
-		int result = value = 10;
+		int result = value + 10;
 		// int : ± 20억 정도의 데이터를 저장할 수 있는 상자
 			// result[아무거나] : 상자의 이름
 				// 변수 호출(변수 불러오기) + 10
