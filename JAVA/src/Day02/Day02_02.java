@@ -70,7 +70,7 @@ public class Day02_02 { // c.s
 			short 쇼트 = (short)인트; // int 형 변수를 short 로 변환하는데 데이터 잘림
 			//System.out.println(쇼트);
 			
-		
+			
 		
 	} // m.e
 
