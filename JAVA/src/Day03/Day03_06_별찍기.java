@@ -221,14 +221,14 @@ public class Day03_06_º°Âï±â { // c s
 			// 1. iteration ½ÃÀÛ
 				for (int i = 1 ; i<=line10 ;i++) {
 					int less1 = (i%9)+1 ;
-					int less2 = (i%9) ;
+//					int less2 = (i%9) ;
 					
 					//°ø¹é Âï±â
-					
-//					for (int b=1; b<=line10-i;b++) {
-//					    System.out.print(" ");
-//					}
-					
+//					
+					for (int b=1; b<=line10-i;b++) {
+					    System.out.print(" ");
+					}
+//					
 					for (int s = 1;s<=less1*2-3;s++) {
 						System.out.print(less1);
 						
@@ -251,7 +251,7 @@ public class Day03_06_º°Âï±â { // c s
 				System.out.println();	
 //					
 				}
-
+				
 				
 			
 		
