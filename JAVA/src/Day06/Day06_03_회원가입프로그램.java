@@ -90,7 +90,7 @@ public class Day06_03_회원가입프로그램 { //Class start
 					if(temp!=null && temp.id.equals(loginid) && 
 						temp.password.equals(loginpassword) ) {
 						// * 객체가 null 일 때는 equals 불가 [null 아닌 상태에서만 equals 실행]
-						System.err.println(" 알림)) 로그인 성공");
+						System.err.println(" 알림)) 로그인 성공\n");
 						logincheck = true; // 로그인 성공했다는 표시 남기기
 					}
 				} // for end
