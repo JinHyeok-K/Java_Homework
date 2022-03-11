@@ -82,7 +82,7 @@ public class Address {
 		}
 		
 	}
-	void 이체(String loginid) {
+	void 이체(String loginid) { // 입력한 이체 계좌번호 없을 시 진행 불가 작성 해야함
 		System.out.print(" 이체하실 계좌번호를 입력하세요"); int adds= Day08_05_은행계좌.scanner.nextInt();
 		System.out.print(" 출금 금액 : ");		int output = Day08_05_은행계좌.scanner.nextInt();
 		System.out.print("비밀 번호를 입력하세요 :"); String pw = Day08_05_은행계좌.scanner.next();
