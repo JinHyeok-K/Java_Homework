@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Day07_05_BookApplication { //class end
 	
-	// BookApplication 클래스: 입&출력 관련 코드
+	// BookApplicatio\n 클래스: 입&출력 관련 코드
 	// Book 클래스: 도서 관련 코드
 	// Member 클래스: 회원 관련 코드
 	

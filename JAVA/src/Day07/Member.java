@@ -8,10 +8,10 @@ public class Member {
 	
 	// 1. 필드
 	int mno;			// 회원번호 [자동번호,중복X]
-	String id;			// 아이디 [ 중복 X ]
-	String password;	// 비밀번호
-	String name;		// 이름
-	String phone;   	// 연락처
+	public String id;			// 아이디 [ 중복 X ]
+	public String password;	// 비밀번호
+	public String name;		// 이름
+	public String phone;   	// 연락처
 	
 	// 2. 생성자 [ 생성자명 == 클래스명 ]
 		// 1. 빈 생성자 [ 기본 생성자 ] => 메소드 호출용 객체 생성시
