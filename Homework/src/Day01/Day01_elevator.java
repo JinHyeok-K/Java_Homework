@@ -33,8 +33,8 @@ public class Day01_elevator { // class start
 				// random.nextInt(수)+시작번호 : 시작번호 ~ 수 사이의 난수 발생
 	
 //		
-		int 엘리베이터층 =5; // test 용 층수
-		int 내위치=5;// test 용 층수
+//		int 엘리베이터층 =5; // test 용 층수
+//		int 내위치=5;// test 용 층수
 		System.out.println("=========================================");
 		System.out.println(" 현재 엘리베이터는 "+ 엘리베이터층+"F 이 있습니다." );
 		System.out.println(" 현재 내 위치 "+ 내위치+"F 입니다." );
