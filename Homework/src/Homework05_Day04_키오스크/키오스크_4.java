@@ -1,8 +1,8 @@
-package Day04;
+package Homework05_Day04_키오스크;
 
 import java.util.Scanner;
 
-public class 키오스크_4 { // [13:36]
+public class 키오스크_4 { // time :[13:36] | 참고횟수 0회
 
 	// 자판기 프로그램 [10min]
 		// 1. 메뉴판 [ 1. 콜라(300) 2.환타(200) 3.사이다(100) 4.결제 ]
@@ -12,7 +12,7 @@ public class 키오스크_4 { // [13:36]
 		// 3. 결제 시 금액을 입력 받아 결제액 만큼 차감 후 잔돈 출력
 				// 1. 투입한 금액보다 결제액(구매액)이 크면 결제 취소 [ 금액 부족 ]
 	
-	// ==> 재고 관련 코드 수정 필요
+	//고칠점 ==> 재고 관련 코드 수정 필요
 	
 	public static void main(String[] args) {
 		

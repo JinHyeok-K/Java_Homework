@@ -1,8 +1,8 @@
-package Day04;
+package Homework05_Day04_키오스크;
 
 import java.util.Scanner;
 
-public class 키오스그_3 { // [17:17]
+public class 키오스그_3 { // [17:17] | 참고횟수 0회
 	// 자판기 프로그램 [10min]
 	// 1. 메뉴판 [ 1. 콜라(300) 2.환타(200) 3.사이다(100) 4.결제 ]
 	// 			// 1. 메뉴판에서 제품 선택하면 장바구니에 넣기
