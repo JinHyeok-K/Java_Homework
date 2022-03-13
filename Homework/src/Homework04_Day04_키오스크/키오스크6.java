@@ -1,4 +1,4 @@
-package Homework05_Day04_키오스크;
+package Homework04_Day04_키오스크;
 
 import java.util.Scanner;
 

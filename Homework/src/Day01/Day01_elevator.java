@@ -17,24 +17,24 @@ public class Day01_elevator { // class start
 		 * 유저가 누르는 곳 위치 (입력1: 현재층) -> 엘리베이터 도착 (엘리베이터 이동상황 표시) -> 입력2:목표층 -> 엘리베이터 이동상황 표시
 		 * 								-> 도착 (도착 표시)
 		 * 
-		 * 
-		 * 
-		 * 
-		 * 
 		 */
 		Scanner scanner = new Scanner(System.in); //입력 객체 선언
 		Random random= new Random();  // 랜덤 객체 생성
+		System.out.println("=========================");
+		System.out.println("====== 몇 층 건물인가요?=======");
+		System.out.println("=========================");
+		System.out.print(" 층수 : "); 	int 층수입력 = scanner.nextInt();
 		
-		
-		int 엘리베이터층 = random.nextInt(5)+1; // 2 난수를 int 형으로 가져오기
-		int 내위치 = random.nextInt(5)+1; // 2 난수를 int 형으로 가져오기
-				// random.nextInt() : +- 20억 사이중 난수 발생
+		int 엘리베이터층 = random.nextInt(층수입력)+1; // 2 난수를 int 형으로 가져오기
+		int 내위치 = random.nextInt(층수입력)+1; // 2 난수를 int 형으로 가져오기
+//				// random.nextInt() : +- 20억 사이중 난수 발생
 				// random.nextInt(수) : 0~수 전까지 사이중 난수 발생
 				// random.nextInt(수)+시작번호 : 시작번호 ~ 수 사이의 난수 발생
 	
 //		
 //		int 엘리베이터층 =5; // test 용 층수
-//		int 내위치=5;// test 용 층수
+//		int 내위치=1;// test 용 층수
+		
 		System.out.println("=========================================");
 		System.out.println(" 현재 엘리베이터는 "+ 엘리베이터층+"F 이 있습니다." );
 		System.out.println(" 현재 내 위치 "+ 내위치+"F 입니다." );
@@ -48,68 +48,93 @@ public class Day01_elevator { // class start
 		
 		if (start == 1) {
 			System.out.println(" 엘리베이터를 가동합니다." );
-			
+			while(true) {
 			if  (엘리베이터층>내위치) {
-					System.out.println("==========================");
-					for(int i=엘리베이터층;i>=내위치;i--) {
-						
-						System.out.println("현재 "+ i+"F 입니다.");
-						
-					}
+				System.out.println("==========================");
+				for(int i=엘리베이터층;i>=내위치;i--) {
+					System.out.println("현재 엘리베이터는"+ i+"F 입니다.");
+				}
 				System.out.println(" 엘리베이터가 도착하였습니다.");
 				System.out.println("==========================\n\n");
 				
 				System.out.println("==========================");
 				System.out.println(" 몇 층으로 가시겠습니까?");
 				System.out.println("선택 : "); int floar = scanner.nextInt();
-					if (내위치<floar) {
-						System.out.println(" 올라 갑니다.");
-						for (int i=내위치;i<=floar;i++) {
-							System.out.println("현재 "+ i+" F 입니다.");
-						}
-						System.out.println(" "+floar+"F 입니다.");
+				if (floar>층수입력) {
+					System.err.println("잘못된 층수 입력입니다. 건물의 총 층수 이상 입력할 수 없습니다.");
+					break;
+				}
+				else if (내위치<floar) {
+					System.out.println(" 올라 갑니다.");
+					for (int i=내위치;i<=floar;i++) {
+						System.out.println("현재 엘리베이터는"+ i+" F 입니다.");
 					}
-					else if (내위치>floar) {
-						System.out.println(" 내려 갑니다.");
-						for (int i=내위치;i>=floar;i--) {
-							System.out.println("현재"+ i+"F입니다.");
-						}
-						System.out.println(" "+floar+"F 입니다.");
+					System.out.println(" 도착하였습니다 현재 엘리베이터는 "+floar+"F 입니다.");
+				}
+				else if (내위치>floar) {
+					System.out.println(" 내려 갑니다.");
+					for (int i=내위치;i>=floar;i--) {
+						System.out.println("현재 엘리베이터는"+ i+"F입니다.");
 					}
+					System.out.println("도착하였습니다 현재 엘리베이터는 "+floar+"F 입니다.");
+				}
 			}
-				else if(엘리베이터층<내위치){
-					System.out.println("==========================");
-					for (int i=엘리베이터층;i<=내위치;i++) {
-						
-						System.out.println( "현재 "+ i +"F 입니다");
-						
+			else if(엘리베이터층<내위치){
+				System.out.println("==========================");
+				for (int i=엘리베이터층;i<=내위치;i++) {
+					System.out.println( "현재 엘리베이터는 "+ i +"F 입니다");
+				}
+				System.out.println(" 엘리베이터가 도착하였습니다");
+				System.out.println("==========================");
+				System.out.println(" 몇 층으로 가시겠습니까?");
+				System.out.println("선택 : "); int floar = scanner.nextInt();
+				if (floar>층수입력) {
+					System.err.println("잘못된 층수 입력입니다. 건물의 총 층수 이상 입력할 수 없습니다.");
+					break;
+				}
+				else if (내위치<floar) {
+					System.out.println(" 올라 갑니다.");
+					for (int i=내위치;i<=floar;i++) {
+						System.out.println("현재 엘리베이터는"+ i+" F 입니다.");
 					}
-					System.out.println(" 엘리베이터가 도착하였습니다");
-					System.out.println("==========================");
+					System.out.println(" "+floar+"F 입니다.");
 				}
-				else if(엘리베이터층==내위치) { 
-					 System.out.println("=========================="); 
-					 System.out.println(" 엘리베이터가 현재 층에 있습니다.");
-					 System.out.println(" 몇 층으로 가시겠습니까?");
-					 System.out.println("==========================");
-					 System.out.println("선택 : "); int floar = scanner.nextInt();
-					 if (내위치<floar) {
-							System.out.println(" 올라 갑니다.");
-							for (int i=내위치;i<=floar;i++) {
-								System.out.println("현재 "+ i+" F 입니다.");
-							}
-							System.out.println(" "+floar+"F 입니다.");
-						}
-						else if (내위치>floar) {
-							System.out.println(" 내려 갑니다.");
-							for (int i=내위치;i>=floar;i--) {
-								System.out.println("현재"+ i+"F입니다.");
-							}
-							System.out.println(" "+floar+"F 입니다.");
-						}
+				else if (내위치>floar) {
+					System.out.println(" 내려 갑니다.");
+					for (int i=내위치;i>=floar;i--) {
+						System.out.println("현재 엘리베이터는"+ i+"F입니다.");
+					}
+					System.out.println(" "+floar+"F 입니다.");
 				}
-		}
-		else {System.out.println("\n\n====================================");}	
+			}
+			else if(엘리베이터층==내위치) { 
+				 System.out.println("=========================="); 
+				 System.out.println(" 엘리베이터가 현재 층에 있습니다.");
+				 System.out.println(" 몇 층으로 가시겠습니까?");
+				 System.out.println("==========================");
+				 System.out.println("선택 : "); int floar = scanner.nextInt();
+				 if (floar>층수입력) {
+					System.err.println("잘못된 층수 입력입니다. 건물층수 이상 입력할 수 없습니다.");
+					break;
+				 }
+				 else if (내위치<floar) {
+					System.out.println(" 올라 갑니다.");
+					for (int i=내위치;i<=floar;i++) {
+						System.out.println("현재 엘리베이터는"+ i+" F 입니다.");
+					}
+					System.out.println(" "+floar+"F 입니다.");
+				 }
+				 else if (내위치>floar) {
+					System.out.println(" 내려 갑니다.");
+					for (int i=내위치;i>=floar;i--) {
+						System.out.println("현재 엘리베이터는"+ i+"F입니다.");
+					}
+					System.out.println(" "+floar+"F 입니다.");
+				}
+			}
+		} // while
+	}
+		else {System.out.println("\n\n==============안녕히 가십시오======================");}	
 		
 		//난수 설정 (현재 엘리베이터 위치)
 		
