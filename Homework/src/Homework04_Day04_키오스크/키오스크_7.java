@@ -9,7 +9,7 @@ import java.util.Scanner;
     4. 녹화[ 코드작성하는 화면을 화면캡쳐하기 ]
     - 1~4번 과정을 다 한 후에 itdanja@kakao.com 에 파일로 제출 혹은 git에 올린후에 git 주소 제출
  */
-public class 키오스크7 { // time: [10:49]  // | 참고횟수 0회
+public class 키오스크_7 { // time: [10:49]  // | 참고횟수 0회
 	// 자판기 프로그램 [10min]
 	// 1. 메뉴판 [ 1. 콜라(300) 2.환타(200) 3.사이다(100) 4.결제 ]
 	// 			// 1. 메뉴판에서 제품 선택하면 장바구니에 넣기
@@ -21,6 +21,11 @@ public class 키오스크7 { // time: [10:49]  // | 참고횟수 0회
 	//		 if사용시 괄호 미스(특히 else시)
 	public static void main(String[] args) { // Main thread 시작
 		Scanner scanner = new Scanner(System.in); // 입력 객체 불러옴  line 3. import 시킴 
+		
+		//Q.)스캐너 객체 load => Resource leak: 'scanner' is never closed 발생 이유 & 해결 방법?
+		//   syso, 자동완석 시 => System.out.println(); 출력하는데 System.err.println(); 의 자동완성은? 
+		// 
+		
 		int 콜라구매=0; int 환타구매=0; int 사이다구매=0;        	//상품(변수) 구매 수량 초기화(정수형 선언) 
 		int 콜라재고=10; int 환타재고=10; int 사이다재고=10;			//상품(변수) 재고 초기화(정수형 선언) 
 		int 콜라가격=300; int 환타가격=200; int 사이다가격=100;		//상품(변수) 가격 초기화(정수형 선언)
@@ -70,7 +75,8 @@ public class 키오스크7 { // time: [10:49]  // | 참고횟수 0회
 					else {System.out.println("잘못된 입력입니다.");} // 1~4번 외 키를 입력시 잘못된 입력이라는 출력 표시
 				}
 				else if (선택==2) { // 선택 변수(이하 선택) 의 값이 2일 때,(초기메뉴에서 결제  선택)
-					결제금액 = 콜라구매*콜라가격+환타구매*환타가격+사이다가격*사이다구매; // 결제금액이라는 변수에 총 결제할 금액을 대입(총 결제할 금액은 선택한 각 음료수의 수(구매)와 가격의 곱의 합) 
+					결제금액 = 콜라구매*콜라가격+환타구매*환타가격+사이다가격*사이다구매; // 결제금액이라는 변수에 총 결제할 금액을 대입(총 결제할 금액은 선택한 각 음료수의 수(구매)와 가격의 곱의 합)
+					
 					System.out.println("결제 메뉴"); // 결제메뉴 출력
 					System.out.println("1.입금 2.결제 3.취소 4.뒤로"); // 1.입금 2.결제 3.취소 4.뒤로 출력 
 					System.out.print("선택 :"); int 결제선택 = scanner.nextInt(); // 선택 : 출력 | 결제선택이란 변수에 입력값 대입(정수형)
