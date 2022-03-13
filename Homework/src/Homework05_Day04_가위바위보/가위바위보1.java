@@ -3,7 +3,7 @@ package Homework05_Day04_가위바위보;
 import java.util.Random;
 import java.util.Scanner;
 
-public class 가위바위보_1 { //time [20] | 
+public class 가위바위보1 { //time [20] | 
 	/*
 	 * 가위바위보게임[10]
 		1. 사용자에게 가위[0]바위[1]보[2] 종료[3] 중에  입력받기
