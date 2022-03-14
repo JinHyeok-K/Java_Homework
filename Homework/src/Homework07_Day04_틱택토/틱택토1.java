@@ -1,9 +1,9 @@
-package Homework07_Day04;
+package Homework07_Day04_틱택토;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class 틱택토1 { // time [ 14:45 	| 10
+public class 틱택토1 { // time [ 14:45 	| 10회
 	/*
 	 * 삼목 게임 [ 틱택토 게임 ] [15]
 			1. 게임판 9칸 생성 

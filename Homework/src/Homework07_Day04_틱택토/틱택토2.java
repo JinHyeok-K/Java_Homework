@@ -1,9 +1,9 @@
-package Homework07_Day04;
+package Homework07_Day04_틱택토;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class 틱택토3 { // time [ 10:50 ]
+public class 틱택토2 { // time[ 17:36]  | 4회
 	/*
 	 * 삼목 게임 [ 틱택토 게임 ] [15]
 			1. 게임판 9칸 생성 
@@ -31,82 +31,77 @@ public class 틱택토3 { // time [ 10:50 ]
 				대각선 인덱스들의 모양이 모두 동일하면 
 				048 246
 	 */
+	//문제점 : 1. 이긴 승리돌 체크 for 문 미스
+			//2.  무승부 시 코드 못 적음
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		String[] 게임판 = {"[ ]","[ ]","[ ]",
-						"[ ]","[ ]","[ ]",
-						"[ ]","[ ]","[ ]"};
-		String 이긴돌 = "";
-		int 게임수 = 0;
+		String[] 게임판 = { "[ ]","[ ]","[ ]",
+							"[ ]","[ ]","[ ]",
+							"[ ]","[ ]","[ ]"};
+		String 이긴돌 ="";
+		int 게임수 =0;
 		
 		while(true) {
 			
-			for (int i = 0 ; i < 9 ; i++) {
+			for(int i=0;i<9;i++) {
 				System.out.print(게임판[i]);
-				if(i%3==2) System.out.println();
-				
+				if(i%3==2)System.out.println();
 			}
-				
 			while(true) {
 				System.out.println(" 놓을 위치 선택 : "); int 선택 = scanner.nextInt();
 				
 				if(게임판[선택].equals("[ ]")) {
-					게임판[선택]= "[O]";
+					게임판[선택] = "[O]";
 					게임수++;
 					break;
 				}
-				else {System.out.println(" 그 위치에는 놓을 수 없습니다.");}
+				else {System.out.println("선택한 곳에 놓을 수 없습니다.");
 				
+				}
 			}
+			
 			while(true) {
-				Random random= new Random();
+				Random random =new Random();
 				int 컴퓨터 = random.nextInt(9);
-				
 				if(게임판[컴퓨터].equals("[ ]")) {
 					게임판[컴퓨터] = "[X]";
 					게임수++;
 					break;
 				}
-			    if(게임수==9) { break;}
+				if(게임수 ==9) {break;}
 			}
-//			
 //			012
 //			345
 //			678
-//			
 			
-			
-			for(int i=0;i<9;i+=3) {
-				if(게임판[i].equals(게임판[i+1]) && 게임판[i+1].equals(게임판[i+2]) ) {
-					이긴돌 = 게임판[i]; 
+			for(int i=0;i<9;i+=3 ) {
+				if(게임판[i].equals(게임판[i+1])&&게임판[i+1].equals(게임판[i+2])) {
+					이긴돌 = 게임판[i];
 				}
 			}
-			for(int i=0;i<=2;i++) {
-				if(게임판[i].equals(게임판[i+3]) && 게임판[i+3].equals(게임판[i+6]) ) {
-					이긴돌 = 게임판[i]; 
-				}	
+			  
+			for(int i = 0;i<=2;i++) {
+				if(게임판[i].equals(게임판[i+3])&&게임판[i+3].equals(게임판[i+6])) {
+					이긴돌 = 게임판[i];
+				}
 			}
-			if(게임판[0].equals(게임판[4])&& 게임판[4].equals(게임판[8]) ) {
-				이긴돌 = 게임판[0];
-				
-			}
-			if(게임판[2].equals(게임판[4])&& 게임판[4].equals(게임판[6]) ) {
-				이긴돌 = 게임판[2];
-				
-			}	
-			
-			if(이긴돌.equals("[O]")) {
-				System.out.println(" 플레이어 승리");
-			}
-			if(이긴돌.equals("[X]")) {
-				System.out.println(" 컴퓨터 승리");
-			}
-			if(게임수 == 9) {
-				System.out.println("무승부");
-			}
-			
-			
 		
+			if(게임판[0].equals(게임판[4])&&게임판[4].equals(게임판[8])) {
+				이긴돌 = 게임판[0];
+			}
+			if(게임판[2].equals(게임판[4])&&게임판[4].equals(게임판[6])) {
+				이긴돌 = 게임판[2];
+			}	
+			if (이긴돌=="[O]") {
+				System.out.println("플레이어 승리");
+				break;
+			}
+			if (이긴돌=="[X]") {
+				System.out.println("컴터 승리");
+				break;
+			}
+			
+	
 		}
 	}
 }

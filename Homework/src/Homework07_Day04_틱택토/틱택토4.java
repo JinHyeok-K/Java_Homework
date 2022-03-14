@@ -1,4 +1,4 @@
-package Homework07_Day04;
+package Homework07_Day04_ф╫ецеД;
 
 import java.util.Random;
 import java.util.Scanner;
