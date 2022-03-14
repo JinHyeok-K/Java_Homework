@@ -111,7 +111,7 @@ public class 은행컨트롤러 { // 클래스
 	
 	}
 		// 4. 이체 [U]  계좌번호, 비밀번호, 입금액,  받는계좌
-	public int 이체(String 본인계좌, String 비밀번호, 
+	public int 이체(String 계좌번호, String 비밀번호, 
 						int 이체금액,  String 받는계좌) { 
 		// 1. 동일한 계좌번호와 비밀번호 찾기
 		// 2. 받는계좌를 찾기
@@ -119,12 +119,12 @@ public class 은행컨트롤러 { // 클래스
 		// 리턴 경우의 수 : 1. 성공 2. 실패[본인 계좌 정보 틀림, 받는 계좌 틀림, 잔액 부족]
 		int i = 0; //본인(보내는사람) 인덱스 위치 변수
 		for(은행 temp:Day09_06_은행계좌프로그램.계좌리스트) { // 보내는 사람 :temp
-			if(temp!= null && temp.get계좌번호().equals(본인계좌)&&
+			if(temp!= null && temp.get계좌번호().equals(계좌번호)&&
 					temp.get비밀번호().equals(비밀번호)) {
 				int j  =0; // 받는사람 인덱스 위치 변수
 				for(은행 temp2 : Day09_06_은행계좌프로그램.계좌리스트) { //받는 사람  : temp2
 					if(temp2!=null && temp.get계좌번호().equals(받는계좌)) {
-						if(temp2.get예금액()<이체금액) {
+						if(temp2.get예금액() <이체금액) {
 							return 1; // 잔액부족
 						}else {
 							Day09_06_은행계좌프로그램.계좌리스트[i].set예금액(temp.get예금액()-이체금액);
@@ -138,9 +138,6 @@ public class 은행컨트롤러 { // 클래스
 			}
 			i++;	
 		}
-		
-
-		
 		return 4;
 	
 	}

@@ -81,10 +81,10 @@ public class Day09_06_은행계좌프로그램 { // 입,출력
 				
 				System.out.println("보내는 분 계좌 : "); 	String 계좌번호 =scanner.next();
 				System.out.println("비밀 번호 "); 			String 비밀번호 =scanner.next();
-				System.out.println("이체하실 금액 : ");	 int 입금액 =scanner.nextInt();
+				System.out.println("이체하실 금액 : ");	 int 이체금액 =scanner.nextInt();
 				System.out.println("받으시는 분 계좌 : "); String 받는계좌 =scanner.next();
 				
-				int result =컨트롤.이체(계좌번호, 비밀번호, 입금액,  받는계좌);
+				int result =컨트롤.이체(계좌번호, 비밀번호, 이체금액,  받는계좌);
 				if(result ==1) {
 					System.out.println("잔액 부족");
 				}else if(result ==2) {
