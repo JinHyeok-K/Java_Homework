@@ -1,4 +1,4 @@
-package Homework07_Day05_회원제방문록_2D_array_version;
+package Homework08_Day05_회원제방문록_2D_array_version;
 
 import java.util.Scanner;
 
