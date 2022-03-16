@@ -2,7 +2,7 @@ package test;
 
 import java.util.Scanner;
 
-public class sample2 {
+public class test {
 	
 //	public static void main(String[] args) {
 //		
@@ -34,8 +34,10 @@ public class sample2 {
 		System.out.println("번호  이름  국어  영어  수학  총점  평균  석차");
 		System.out.println("-------------------------------------");
 		
-		}
 		
-	}
-	
-}
+		
+		
+		}//while end
+	}//main end
+}//class end
+
