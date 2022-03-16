@@ -1,5 +1,6 @@
 package Day05;
 
+import java.util.Random;
 import java.util.Scanner;
 
 // 
@@ -76,6 +77,15 @@ public class Day05_04_도서대여프로그램 { // c.s
 			// ID /PW / 대여중 도서
 		String[][] 도서목록 = new String[100][3]; 		// 도서 배열 선언 : total 100개 장서
 			// 도서명 /대출중 or 대출가능 / 대여인(id)
+		Random random = new Random();
+		int admin_address = random.nextInt(회원.length);
+		String admin_ID ="admin";
+		String admin_PW ="admin";
+		회원[admin_address][0] = admin_ID; 회원[admin_address][1] = admin_PW;
+		// admin 등록 확인
+		System.out.println(admin_address);
+		System.out.println(회원[admin_address][0]);
+		System.out.println(회원[admin_address][1]); 
 		
 	// 2. 초기메뉴
 //		1. 회원가입 2.로그인
@@ -91,8 +101,10 @@ public class Day05_04_도서대여프로그램 { // c.s
 		System.out.println(" 선택 : "); 
 		//* admin 계정 등록
 		
-		회원[100][0] = "admin";
-		회원[100][1] = "admin";
+//		회원[100][0] = "admin";
+//		회원[100][1] = "admin";
+//		
+		
 		int realcount = 0;
 		int nullcount = 0;
 //		System.out.println(회원[100][0]);
