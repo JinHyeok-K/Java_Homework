@@ -3,7 +3,7 @@ package Homework09_Day05_도서대여;
 import java.util.Random;
 import java.util.Scanner;
 
-public class 도서대여1 {
+public class 도서대여3 {
 	/*
 	사용문법 1. 입출력 2.변수/자료형/연산  3.제어/반복 4.제어/반복 5.배열
 	* 도서 대여 console 프로그램
