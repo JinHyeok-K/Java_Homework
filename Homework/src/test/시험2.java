@@ -105,7 +105,7 @@ public class ½ÃÇè2 {
 			scanner = new Scanner(System.in);
 			}
 			
-			1
+			
 			
 			
 			
