@@ -41,9 +41,9 @@ public class 틱택토7 { // time 09:07 | 0회
 		String 승리알 ="";
 		
 		while(true) {
-			for(int i =0 ;i<9;i++) {
+			for(int i =0 ;i<12;i++) {
 				System.out.print(게임판[i]);
-					if(i%3==2) System.out.println();				
+					if(i%4==3) System.out.println();				
 			}
 			
 			while(true) {

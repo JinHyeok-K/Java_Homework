@@ -8,7 +8,7 @@ import java.util.Scanner;
 	2. 주사위 설정 (Random) 
 	3. 게임 스타트 후 유저, 컴퓨터 간 위치 표시 '유저:[O], 컴퓨터:[X]'
 		3-1 다음 게임 시 전 게임 위치 삭제
-	4. 동일 위치 시 가위바위보 게임 시작 
+	4. 동일 위치 시 가위바위보 게임(미니게임) 시작
 		4-1 유저 승리시 동일 위치에 [O] 표시
 		4-2 컴퓨터 승리시 동일 위치에 [X] 표시
 	5. 누적된 위치 값이 설정한 게임배열 값 이상 혹은 도착시 승리  
@@ -22,7 +22,7 @@ public class 자유주제프로그램 {
 		
 		
 		
-		System.out.println(" mini 부루마블 ");
+		System.out.println(" 1-D 부루마블 ");
 		System.out.println("게임 판 크기 설정"); int round=scanner.nextInt();
 		System.out.println("주사위 눈 설정"); int eyes=scanner.nextInt();
 		String[] 게임판 = new String[round];
