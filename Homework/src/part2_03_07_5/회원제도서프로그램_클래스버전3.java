@@ -1,5 +1,7 @@
 package part2_03_07_5;
 
+import java.util.Scanner;
+
 public class 회원제도서프로그램_클래스버전3 {
 	// BookApplication 클래스 : 입출력 관련코드
 		// Book 클래스 : 도서 관련 코드 
@@ -24,6 +26,103 @@ public class 회원제도서프로그램_클래스버전3 {
 			// static  : 프로그램 시작시 메모리 할당 / 프로그램 종료시 메모리 초기화
 				// 프로그램 전반적으로 모든곳에 사용되는 메모리[변수]
 		
-		// Time 
+		// Time  44:00
 		// 문제점
+		static Scanner scanner =new Scanner(System.in);
+		static Member3[] member3 = new Member3[100];
+		static Book3[] book3 = new Book3[100];
+		
+		public static void main(String[] args) {
+			
+
+			회원제도서프로그램_클래스버전3 app = new 회원제도서프로그램_클래스버전3();
+			app.menu();
+			
+			
+			
+			
+			
+		}
+		void membermenu(String loginid) {
+			while(true) {
+				System.out.println("회원메뉴");
+				System.out.print(" [ 1.도서검색 2.도서목록 3.도서대여 4.도서반납 5.로그아웃 ]");
+				int ch = scanner.nextInt();
+				Book3 book3 = new Book3();
+				if(ch==1) {book3.도서목록(); }
+				else if(ch==2) { book3.도서목록(); }
+				else if(ch==3) {book3.도서대여(loginid);}
+				else if(ch==4) {book3.도서반납(loginid);}
+				else if(ch==5) { break;}
+				else  {System.out.println("알수없는 번호"); }
+				
+			}
+			
+		}
+		void adminmenu() {
+			while(true) {
+				System.out.println("관리자메뉴");
+				System.out.print(" [ 1.도서등록 2.도서목록 3.도서삭제 4.로그아웃 ]");
+				int ch = scanner.nextInt();
+				Book3 book3 = new Book3();
+				if(ch==1) {book3.도서등록(); }
+				else if(ch==2) { book3.도서목록(); }
+				else if(ch==3) {book3.도서삭제();}
+				else if(ch==4) {break;}
+			
+				else  {System.out.println("알수없는 번호"); }
+				
+			}
+			
+		}
+		
+		void menu() {
+			while(true) {
+				System.out.println("도서대여프로그램");
+				System.out.println("[ 1.회원가입 , 2.로그인 , 3.아이디찾기 , 4.비밀번호찾기  ]");
+				int ch = scanner.nextInt();
+				Member3 member3 = new Member3();
+				if(ch ==1 ) {
+					
+					boolean result = member3.회원가입();
+					if(result)
+						System.out.println("회원가입 성공");
+					else
+						System.out.println("회원가입 tlfvo");
+					
+					
+				}
+				else if(ch==2) {
+					String result = member3.로그인();
+					
+					if(result ==null) {
+						System.out.println("동일한 회원정보가 없습니다.");
+					}
+					else if(result.equals("admin")) {
+						
+						System.out.println("관리자 접속");
+						adminmenu();
+					}
+					else {
+						System.out.println("어서오세요");
+						membermenu(result);
+					}
+					
+				}
+				else if (ch==3) {
+					member3.아이다찾기();
+				}
+				else if (ch==4) {
+					member3.비밀번호찾기();
+				}
+				else System.out.println("알수없는 값");
+				
+			}
+			
+			
+			
+			
+		}
+		
+		
 }

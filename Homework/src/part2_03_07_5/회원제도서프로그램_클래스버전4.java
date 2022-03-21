@@ -1,5 +1,8 @@
 package part2_03_07_5;
 
+import java.awt.print.Book;
+import java.util.Scanner;
+
 public class 회원제도서프로그램_클래스버전4 {
 	// BookApplication 클래스 : 입출력 관련코드
 		// Book 클래스 : 도서 관련 코드 
@@ -24,6 +27,99 @@ public class 회원제도서프로그램_클래스버전4 {
 			// static  : 프로그램 시작시 메모리 할당 / 프로그램 종료시 메모리 초기화
 				// 프로그램 전반적으로 모든곳에 사용되는 메모리[변수]
 		
-		// Time 
+		// Time  :42:20
 		// 문제점
+	static Scanner scanner = new Scanner(System.in);
+	static Member4[] member4 = new Member4[100];
+	static Book4[] book4 = new Book4[100];
+	
+	public static void main(String[] args) {
+	
+		회원제도서프로그램_클래스버전4 app =new 회원제도서프로그램_클래스버전4();
+		
+		
+		app.menu();
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	void membermenu(String loginid) {
+		while(true){
+			
+			System.out.println("회원메뉴");
+			System.out.println("1.도서검색 2.도서목록 3.도서대여 4.도서반납 5로그아웃 선택:>");
+			int ch = scanner.nextInt();
+			Book4 book4 = new Book4();
+			if(ch ==1 ) {book4.도서검색();}
+			else if(ch ==2 ) {book4.도서목록();}
+			else if(ch ==3 ) {book4.도서대여(loginid);}
+			else if(ch ==4 ) {book4.도서반납(loginid);}
+			else if(ch ==5 ) {break;}
+			else  {System.out.println("알수없는 번호");}
+			
+			
+		}
+	}
+	void adminmenu() {
+while(true){
+			
+			System.out.println("회원메뉴");
+			System.out.println("1.도서등록 2.도서목록 3.도서삭제 4.로그아웃 선택:>");
+			int ch = scanner.nextInt();
+			Book4 book4 = new Book4();
+			if(ch ==1 ) {book4.도서등록();}
+			else if(ch ==2 ) {book4.도서목록();}
+			else if(ch ==3 ) {book4.도서삭제();}
+			else if(ch ==4 ) {break;}
+			else  {System.out.println("알수없는 번호");}
+			
+			
+		}
+	}
+	
+	
+	void menu() {
+		while(true) {
+			System.err.println("도서대여 프로그램");
+			System.out.println("1.회원가입 2.로그인 3.아이디찾기 4비밀번호찾기 : ");
+			int ch = scanner.nextInt();
+			Member4 member4 = new Member4();
+			if(ch==1) {
+				
+				boolean result = member4.회원가입();
+				if(result)
+					System.out.println("회원가입 성공");
+				else
+					System.out.println("회원가입 실패");				
+			}
+			else if (ch==2) {
+				String result = member4.로그인();
+				if(result == null) {
+					System.err.println("동일한 정보가 없음");
+					
+				}else if(result.equals("admin")) {
+					System.out.println("관리자접속");
+					adminmenu();
+				}
+				else {System.out.println("어서오세요");
+				 	membermenu(result);
+				}
+			}
+			else if (ch==3) {
+				member4.아이디찾기();
+			}
+			else if (ch==4) {
+				member4.비밀번호찾기();
+			}
+			else System.out.println("알수없는 번호");
+			
+		}
+	}
+	
+	
 }
