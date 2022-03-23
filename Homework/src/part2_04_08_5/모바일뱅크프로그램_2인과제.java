@@ -22,5 +22,47 @@ public class 모바일뱅크프로그램_2인과제 {
 		// 회원가입 클래스(member) - id,pw,이름,전화번호 => 계좌번호 random 발생 -> 배열 저장
 		// 통장 클래스( account ) = 계좌번호 , 이름, 예금액
 		//
-	 
+	public static void main(String[] args) {
+		모바일뱅크프로그램_2인과제 app = new 모바일뱅크프로그램_2인과제();
+		System.out.println(" 환영합니다. ");
+		app.menu();
+	}
+	
+	void menu() {
+		
+		
+		Bank_total_controller contorller = new Bank_total_controller();
+		Bank_account_controller acc_con = new Bank_account_controller();
+		
+		while(true) {
+			System.out.println("------------------------------");
+			System.out.println("본 은행 회원이십니까?"); 
+			System.out.println("1.예 2.아니오"); int ch1= contorller.scanner.nextInt();
+			if(ch1==2) {
+				System.out.println("회원가입하시겠습니까?"); 
+				System.out.println("1.예 2.아니오"); int ch2= contorller.scanner.nextInt(); 
+				
+				if(ch2==1) { //회원가입 메뉴 가입 후 초기메뉴
+					
+					boolean result = acc_con.회원가입();
+						if(result)
+							System.out.println("회원가입이 완료되었습니다.");
+						else
+							System.err.println("회원가입 실패");
+				}
+				else if(ch2==2) {
+					System.out.println("안녕히 가십시오");
+					break;
+				}
+				else {}
+			}
+			else if(ch1==1) { //로그인 메뉴 
+				contorller.startMenu();
+			}
+		}
+	}
+	
 }
+
+
+
