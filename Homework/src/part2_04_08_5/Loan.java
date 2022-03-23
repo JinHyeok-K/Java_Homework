@@ -3,22 +3,22 @@ package part2_04_08_5;
 public class Loan {
 	
 	private String Loan_name;
-	private int Loan_amount;
-	private String Loan_interest;
+	private int Loan_moeny;
+	private long Loan_interest;
 	private String Loan_customer;
-	private boolean Loan_Repayment;
+	private int Loan_address;
 	
 	public Loan() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	public Loan(String loan_name, int loan_amount, String loan_interest, String loan_customer, boolean loan_Repayment) {
+	public Loan(String loan_name, int loan_moeny, long loan_interest, String loan_customer, int loan_address) {
 		super();
 		Loan_name = loan_name;
-		Loan_amount = loan_amount;
+		Loan_moeny = loan_moeny;
 		Loan_interest = loan_interest;
 		Loan_customer = loan_customer;
-		Loan_Repayment = loan_Repayment;
+		Loan_address = loan_address;
 	}
 
 	public String getLoan_name() {
@@ -29,19 +29,19 @@ public class Loan {
 		Loan_name = loan_name;
 	}
 
-	public int getLoan_amount() {
-		return Loan_amount;
+	public int getLoan_moeny() {
+		return Loan_moeny;
 	}
 
-	public void setLoan_amount(int loan_amount) {
-		Loan_amount = loan_amount;
+	public void setLoan_moeny(int loan_moeny) {
+		Loan_moeny = loan_moeny;
 	}
 
-	public String getLoan_interest() {
+	public long getLoan_interest() {
 		return Loan_interest;
 	}
 
-	public void setLoan_interest(String loan_interest) {
+	public void setLoan_interest(long loan_interest) {
 		Loan_interest = loan_interest;
 	}
 
@@ -53,13 +53,14 @@ public class Loan {
 		Loan_customer = loan_customer;
 	}
 
-	public boolean isLoan_Repayment() {
-		return Loan_Repayment;
+	public int getLoan_address() {
+		return Loan_address;
 	}
 
-	public void setLoan_Repayment(boolean loan_Repayment) {
-		Loan_Repayment = loan_Repayment;
+	public void setLoan_address(int loan_address) {
+		Loan_address = loan_address;
 	}
-	
-	
+
+
+//	
 }

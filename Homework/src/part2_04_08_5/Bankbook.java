@@ -5,18 +5,19 @@ public class Bankbook {
 	private int Bankbook_number;
 	private int save_money;
 	private String id;
+	private int loan_address;
 //	private String name;
 	
 	public Bankbook() {
 	
-	}	
-	
-	public Bankbook(int bankbook_number, int save_money, String id) {
+	}
+
+	public Bankbook(int bankbook_number, int save_money, String id, int loan_address) {
 		super();
 		Bankbook_number = bankbook_number;
 		this.save_money = save_money;
 		this.id = id;
-//		this.name = name;
+		this.loan_address = loan_address;
 	}
 
 	public int getBankbook_number() {
@@ -43,14 +44,14 @@ public class Bankbook {
 		this.id = id;
 	}
 
-//	public String getName() {
-//		return name;
-//	}
-//
-//	public void setName(String name) {
-//		this.name = name;
-//	}
-//	
+	public int getLoan_address() {
+		return loan_address;
+	}
+
+	public void setLoan_address(int loan_address) {
+		this.loan_address = loan_address;
+	}	
+	
 	
 	
 	

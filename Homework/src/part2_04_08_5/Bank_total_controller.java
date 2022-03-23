@@ -12,6 +12,7 @@ public class Bank_total_controller {
 	static ArrayList<Loan> loanlist = new ArrayList<>(); // 대출 상품 저장용 리스트
 	static ArrayList<Bankbook> booklist = new ArrayList<>();
 	static Random random = new Random();
+	static Loan_controller loan_controller = new Loan_controller();
 	static Bank_total_controller controller = new Bank_total_controller();
 	//회원메뉴 
 	// 1. 회원가입 
@@ -37,37 +38,38 @@ public class Bank_total_controller {
 		// Bank total Controller 
 	// 6. 내 계좌목록
 		// Bank total Controller 
-	Bank_account_controller account_controller = new Bank_account_controller();
+	static Bank_account_controller account_controller = new Bank_account_controller();
 
 	public void startMenu() {
 		while (true) {
 
 			System.out.println("=========================================");
-			System.out.print("1.로그인 , 2.아이디찾기 , 3.비밀번호찾기"); // 선택창 출력
+			System.out.print("1.로그인 , 2.아이디찾기 , 3.비밀번호찾기 "); // 선택창 출력
 			int ch1 = scanner.nextInt();
 			if (ch1 == 1) {
 				String result = account_controller.로그인();
-				if (result == null)
-					System.out.println("일치하는 회원이 없습니다.");
+				if (result == null) {}
+//					System.out.println("일치하는 회원이 없습니다.");
 				else if (result == "admin") {
 					System.out.println("\n 관리자접속"); // 관리자용 안내 출력
 					관리자메뉴();
 				} else
 					System.out.println("어서오십시오");
-				회원메뉴(result);
+					회원메뉴(result);
 			} else if (ch1 == 2) {
 				account_controller.아이디찾기();
 
 			} else if (ch1 == 3) {
 				account_controller.비밀번호찾기();
-			} else
+			}  
+			else
 				System.err.println(" 잘못된 값을 입력하였습니다.");
 		}
 	}
 
 	void 회원메뉴(String loginid) {
-		// 계좌 주요기능 : 1.계좌생성 2.입금 3.출금 4.이체 5.대출 6.내 계좌목록
-		System.out.print("1.계좌생성 2.입금 3.출금 4.이체 5.대출 6.내 계좌목록 :");
+	 while(true) {
+		System.out.print("1.계좌생성 2.입금 3.출금 4.이체 5.대출 6.내 계좌목록 7.뒤로:");
 		int ch1 = scanner.nextInt();
 		if (ch1 == 1) {
 			account_controller.계좌생성(loginid);
@@ -88,16 +90,22 @@ public class Bank_total_controller {
 		else if(ch1==6) {
 			System.out.println("----------------------");
 			System.out.println("\t내 계좌 목록");
+			System.out.println("일반계좌\t\t대출계좌");
 			for(Bankbook temp:booklist) {
 				if(temp!=null && temp.getId().equals(loginid)) {
-					System.out.println(temp.getBankbook_number());
-					
+					if(temp!=null && temp.getLoan_address()==0) {
+						System.out.printf("%d\t\t",temp.getBankbook_number()+"\t\t"+" - ");
+					}
+					else if(temp!=null && temp.getLoan_address()!=0) {
+						System.out.printf("%d\t\t",temp.getBankbook_number(),temp.getLoan_address());
+					}
+						
 				}
 			}
-			System.out.println("----------------------");
+			System.out.println("\n----------------------");
 		}
-		
-
+		else if(ch1==7) {break;}
+	 }
 	}
 	
 	void 입금(String loginid) {
@@ -170,13 +178,33 @@ public class Bank_total_controller {
 		}
 	
 	}
-	void 대출() {}
+	void 대출(String loginid) {
+		System.out.println(" 대출 메뉴 ");
+		System.out.print("1.대출상품정보 2.대출신청"); int 대출선택 = scanner.nextInt();
+		if(대출선택 == 1) {
+			loan_controller.대출상품정보();
+		}
+		if(대출선택 == 2)
+			loan_controller.대출신청(loginid);
+		
+	}
 	
 	
 	
 
 	// 관리자 메뉴
 	void 관리자메뉴() {
-
+		
+		System.out.println(" ============ 관리자 메뉴 ============");
+		System.out.println("1.대출상품등록 2.대출회원관리"); int ch1= scanner.nextInt();
+		if(ch1 == 1 ) {
+			
+			loan_controller.대출상품등록();
+		}
+		else if(ch1 == 2) {
+			
+			loan_controller.대출회원관리();
+		}
+		else System.out.println(" 잘못 입력한 값입니다.");
 	}
 }

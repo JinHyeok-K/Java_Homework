@@ -23,6 +23,7 @@ public class 모바일뱅크프로그램_2인과제 {
 		// 통장 클래스( account ) = 계좌번호 , 이름, 예금액
 		//
 	public static void main(String[] args) {
+		
 		모바일뱅크프로그램_2인과제 app = new 모바일뱅크프로그램_2인과제();
 		System.out.println(" 환영합니다. ");
 		app.menu();
@@ -37,10 +38,10 @@ public class 모바일뱅크프로그램_2인과제 {
 		while(true) {
 			System.out.println("------------------------------");
 			System.out.println("본 은행 회원이십니까?"); 
-			System.out.println("1.예 2.아니오"); int ch1= contorller.scanner.nextInt();
+			System.out.println("1.예 2.아니오"); int ch1= Bank_total_controller.scanner.nextInt();
 			if(ch1==2) {
 				System.out.println("회원가입하시겠습니까?"); 
-				System.out.println("1.예 2.아니오"); int ch2= contorller.scanner.nextInt(); 
+				System.out.println("1.예 2.아니오"); int ch2= Bank_total_controller.scanner.nextInt(); 
 				
 				if(ch2==1) { //회원가입 메뉴 가입 후 초기메뉴
 					
