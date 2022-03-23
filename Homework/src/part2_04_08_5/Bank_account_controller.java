@@ -8,7 +8,7 @@ public class Bank_account_controller {
 	Bank_total_controller controller =new Bank_total_controller();
 	ArrayList<Account> account = new ArrayList<>();
 	boolean 회원가입() {
-		System.out.println("회원가입 페이지");
+		System.out.println("회원가입 페이지");  
 		System.out.print(" ID : "); String id=controller.scanner.next();
 		System.out.print(" Password : "); String password=controller.scanner.next();
 		System.out.print(" Name : "); String name=controller.scanner.next();
@@ -68,10 +68,16 @@ public class Bank_account_controller {
 		}
 		System.out.println(" 일치하는 회원이 없습니다.");
 	}
-	void 계좌생성() {
+	void 계좌생성(String loginid) {
 		System.out.println("계좌 생성 메뉴");
-		
-		
+		int address = controller.random.nextInt(1000);
+		Bankbook books = new Bankbook(address, 0, loginid);
+		controller.booklist.add(books);
+		System.out.println("계좌 생성 완료");
+//		private int Bankbook_number;
+//		private int save_money;
+//		private String id;
+//		private String name;
 	}
 	
 	
